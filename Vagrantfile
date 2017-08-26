@@ -20,20 +20,5 @@ Vagrant.configure("2") do |config|
      vb.memory = "256"
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-
-    # install packages
-    apt-get update
-    apt-get install --yes silversearcher-ag
-    apt-get install --yes nginx
-
-    # copy files
-    sudo cp /vagrant/provision/nginx.conf /etc/nginx/sites-available/site.conf
-    sudo chmod 644 /etc/nginx/sites-available/site.conf
-    sudo ln -sf /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.conf
-    sudo service nginx restart
-
-    sudo rm -Rf /var/www
-    ln -s /vagrant /var/www
-  SHELL
+  config.vm.provision "shell", path: "provision/bootstrap.sh"
 end
