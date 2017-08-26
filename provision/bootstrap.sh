@@ -2,7 +2,13 @@
 
 # install packages
 apt-get update
+
+# Essentials
+apt-get install --yes vim
+apt-get install --yes git
 apt-get install --yes silversearcher-ag
+
+# LEMP core
 apt-get install --yes nginx
 apt-get install --yes mariadb-server
 apt-get install --yes php-fpm
