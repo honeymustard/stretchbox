@@ -22,11 +22,16 @@ apt-get install --yes php-mcrypt
 apt-get install --yes php-xml
 apt-get install --yes php-xmlrpc
 
+# Node js
+apt-get install --yes curl
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt-get install --yes nodejs
+
 # configure nginx
 sudo cp /vagrant/provision/nginx.conf /etc/nginx/sites-available/site.conf
 sudo chmod 644 /etc/nginx/sites-available/site.conf
 sudo ln -sf /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.conf
-sudo service nginx restart
+sudo systemctl restart nginx
 
 # configure mariadb
 sudo mariadb --user=root --password=root --execute="\
@@ -36,7 +41,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';\
 FLUSH PRIVILEGES;" > /dev/null 2>&1
 
 # configure php
-systemctl restart php7.0-fpm 
+sudo systemctl restart php7.0-fpm
 
 # finish
 sudo rm -Rf /var/www
