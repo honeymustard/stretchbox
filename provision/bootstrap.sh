@@ -41,6 +41,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';\
 FLUSH PRIVILEGES;" > /dev/null 2>&1
 
 # configure php
+sudo cp /vagrant/provision/php.ini /etc/php/7.0/fpm/php.ini
 sudo systemctl restart php7.0-fpm
 
 # finish
