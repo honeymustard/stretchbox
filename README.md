@@ -1,4 +1,4 @@
-# Vagrant setup with debian/stretch64
+# Stretchbox
 
 This chronicles a vagrant development setup for Debian 9.
 
@@ -12,14 +12,19 @@ This chronicles a vagrant development setup for Debian 9.
 
 ## Information
 
-    ip    => 192.168.33.10
-    ssh   => vagrant@stretch
-    box   => debian/stretch64
+    System
     host  => stretchbox.dev
+    ip    => 192.168.33.10:80
+    user  => vagrant@stretch
+
+    MariaDB
+    host  => localhost
+    user  => root
+    pass  => root
 
 ## Commands
 
-    $ vagrant up [--provision]      # start machine  [with new settings]
+    $ vagrant up     [--provision]  # start machine  [with new settings]
     $ vagrant reload [--provision]  # reload machine [with new settings]
     $ vagrant ssh                   # command line access
 
