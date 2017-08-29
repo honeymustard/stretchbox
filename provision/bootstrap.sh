@@ -1,31 +1,31 @@
 #!/usr/bin/env bash
 
 # install packages
-apt-get update
+sudo apt-get update
 
 # Essentials
-apt-get install --yes vim
-apt-get install --yes git
-apt-get install --yes silversearcher-ag
+sudo apt-get install --yes vim
+sudo apt-get install --yes git
+sudo apt-get install --yes silversearcher-ag
 
 # LEMP core
-apt-get install --yes nginx
-apt-get install --yes mariadb-server
-apt-get install --yes php-fpm
+sudo apt-get install --yes nginx
+sudo apt-get install --yes mariadb-server
+sudo apt-get install --yes php-fpm
 
 # PHP libraries
-apt-get install --yes php-mysql
-apt-get install --yes php-curl
-apt-get install --yes php-gd
-apt-get install --yes php-mbstring
-apt-get install --yes php-mcrypt
-apt-get install --yes php-xml
-apt-get install --yes php-xmlrpc
+sudo apt-get install --yes php-mysql
+sudo apt-get install --yes php-curl
+sudo apt-get install --yes php-gd
+sudo apt-get install --yes php-mbstring
+sudo apt-get install --yes php-mcrypt
+sudo apt-get install --yes php-xml
+sudo apt-get install --yes php-xmlrpc
 
 # Node js
-apt-get install --yes curl
+sudo apt-get install --yes curl
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-apt-get install --yes nodejs
+sudo apt-get install --yes nodejs
 
 # configure nginx
 sudo cp /vagrant/provision/nginx.conf /etc/nginx/sites-available/site.conf
