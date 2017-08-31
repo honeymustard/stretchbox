@@ -35,6 +35,10 @@
                 margin: 0 0 10px;
             }
 
+            b {
+                font-weight: 600;
+            }
+
             .intro {
                 font-size: 19px;
                 line-height: 26px;
@@ -83,9 +87,6 @@
     </head>
 
     <body>
-
-        <?php $db = new Mysqli('localhost', 'root', 'root', 'mysql'); ?>
-
         <div class="main">
             <h1>Stretchbox</h1>
 
@@ -101,18 +102,18 @@
             <div class="block">
                 <h3>Nginx</h3>
                 <ul>
-                    <li>host: stretchbox.dev</li>
-                    <li>addr: 192.168.33.10:80</li>
+                    <li><b>host</b>: stretchbox.dev</li>
+                    <li><b>addr</b>: 192.168.33.10:80</li>
                 </ul>
             </div>
+
+            <?php $db = new Mysqli('localhost', 'root', 'root', 'mysql'); ?>
 
             <div class="block">
                 <h3>MariaDB</h3>
                 <p class="para">Status: <?php echo $db->connect_errno ? 'Not connected' : 'Connected'; ?></p>
                 <ul>
-                    <li>host: localhost</li>
-                    <li>user: root</li>
-                    <li>pass: root</li>
+                    <li><b>host</b>: localhost, <b>user</b>: root, <b>pass</b>: root</li>
                 </ul>
             </div>
 
