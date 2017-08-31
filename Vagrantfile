@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "debian/contrib-stretch64"
   config.vm.box_url = "https://app.vagrantup.com/debian/boxes/contrib-stretch64"
 
+  config.vm.network :forwarded_port, guest: 22, host: 6464, id: 'ssh'
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
@@ -17,7 +18,8 @@ Vagrant.configure("2") do |config|
 
   # Up this if you need more space
   config.vm.provider "virtualbox" do |vb|
-     vb.memory = "256"
+    vb.name = "Stretchbox"
+    vb.memory = "256"
   end
 
   config.vm.provision "shell", path: "provision/bootstrap.sh"
