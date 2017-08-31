@@ -44,7 +44,7 @@ FLUSH PRIVILEGES;" > /dev/null 2>&1
 sudo cp /vagrant/provision/php.ini /etc/php/7.0/fpm/php.ini
 sudo systemctl restart php7.0-fpm
 
-# finish
+# setup logs
 if [ ! -d /vagrant/log ]; then
     mkdir /vagrant/log
 fi
@@ -53,5 +53,6 @@ if [ ! -d /vagrant/log/nginx ]; then
     mkdir /vagrant/log/nginx
 fi
 
+# finish
 sudo rm -Rf /var/www
 ln -s /vagrant /var/www
