@@ -45,5 +45,13 @@ sudo cp /vagrant/provision/php.ini /etc/php/7.0/fpm/php.ini
 sudo systemctl restart php7.0-fpm
 
 # finish
+if [ ! -d /vagrant/log ]; then
+    mkdir /vagrant/log
+fi
+
+if [ ! -d /vagrant/log/nginx ]; then
+    mkdir /vagrant/log/nginx
+fi
+
 sudo rm -Rf /var/www
 ln -s /vagrant /var/www
