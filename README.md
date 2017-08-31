@@ -41,7 +41,7 @@ $ vagrant vbguest
 
 ## Resources
 
-Default Debian box [debian/boxes/stretch64](https://app.vagrantup.com/debian/boxes/stretch64)  
+Default Debian box [debian/boxes/stretch64](https://app.vagrantup.com/debian/boxes/contrib-stretch64)  
 The official Vagrant documentation [docs.vagrantup.com](https://docs.vagrantup.com)
 
 ## Copyright
