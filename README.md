@@ -41,9 +41,9 @@ $ vagrant vbguest
 
 ## Resources
 
-Default Debian box [debian/boxes/stretch64](https://app.vagrantup.com/debian/boxes/stretch64)<br>
+Default Debian box [debian/boxes/stretch64](https://app.vagrantup.com/debian/boxes/stretch64)  
 The official Vagrant documentation [docs.vagrantup.com](https://docs.vagrantup.com)
 
 ## Copyright
-Licensed under the MIT license (MIT).<br>
+Licensed under the MIT license (MIT).  
 Copyright &copy; 2017 Adrian Solumsmo.
