@@ -12,10 +12,14 @@ A simple LEMP stack for Vagrant with Debian 9.
 
 ## Information
 ```
-System
+SSH
+user  => vagrant
+host  => 127.0.0.1
+port  => 6464
+
+Nginx
 host  => stretchbox.dev
-ip    => 192.168.33.10:80
-user  => vagrant@stretch
+ip    => 192.168.33.10
 
 MariaDB
 host  => localhost

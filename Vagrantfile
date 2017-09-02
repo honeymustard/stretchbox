@@ -11,7 +11,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
-  # Copy certain config files
+  # Copy certain files
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/host.pub"
   config.vm.provision "file", source: "~/.agignore", destination: "~/.agignore"
   config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
   config.vm.provision "file", source: "~/.vimrc", destination: "~/.vimrc"
