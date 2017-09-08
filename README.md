@@ -6,7 +6,7 @@ A simple LEMP stack for Vagrant with Debian 9.
 
 * Install **Vagrant** and **Virtualbox**.
 * Add a host name to **/etc/hosts** e.g. "192.168.33.10 stretchbox.dev".
-* Add a host name to **provision/nginx.conf** e.g. "server_name stretchbox.dev".
+* Add a host name to **provision/nginx/site.conf** e.g. "server_name stretchbox.dev".
 * Run **rm -Rf .git/** in the root directory.
 * Run **vagrant up** in the root directory.
 
