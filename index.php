@@ -94,16 +94,14 @@
 
             <div class="block">
                 <h3>Debian</h3>
-                <ul>
-                    <li>Debian GNU/Linux 9 "Stretch"</li>
-                </ul>
+                <p class="para">Debian GNU/Linux 9 "Stretch"</p>
             </div>
 
             <div class="block">
                 <h3>Nginx</h3>
                 <ul>
-                    <li><b>host</b>: stretchbox.dev</li>
-                    <li><b>addr</b>: 192.168.33.10:80</li>
+                    <li><b>host</b> stretchbox.dev</li>
+                    <li><b>addr</b> 192.168.33.10</li>
                 </ul>
             </div>
 
@@ -113,15 +111,15 @@
                 <h3>MariaDB</h3>
                 <p class="para">Status: <?php echo $db->connect_errno ? 'Not connected' : 'Connected'; ?></p>
                 <ul>
-                    <li><b>host</b>: localhost, <b>user</b>: root, <b>pass</b>: root</li>
+                    <li><b>host</b> localhost</li>
+                    <li><b>user</b> root</li>
+                    <li><b>pass</b> root</li>
                 </ul>
             </div>
 
             <div class="block">
                 <h3>PHP</h3>
-                <ul>
-                    <li>Version <?php echo PHP_VERSION; ?></li>
-                </ul>
+                <p class="para">Version <?php echo PHP_VERSION; ?></p>
             </div>
         </div>
     </body>
