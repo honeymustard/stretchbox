@@ -1,13 +1,12 @@
 # -*- mode: ruby -*-
 
-# Development setup for debian/stretch.
 Vagrant.configure("2") do |config|
 
-  # Debian stretch
+  # Default box
   config.vm.box = "debian/contrib-stretch64"
   config.vm.box_url = "https://app.vagrantup.com/debian/boxes/contrib-stretch64"
 
-  config.vm.network :forwarded_port, guest: 22, host: 6464, id: "ssh"
+  config.vm.network "forwarded_port", guest: 22, host: 6464, id: "ssh"
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
@@ -23,5 +22,10 @@ Vagrant.configure("2") do |config|
     vb.memory = "256"
   end
 
+  # Restart services
+  config.vm.provision "shell", inline: "sudo service mariadb restart", run: "always"
+  config.vm.provision "shell", inline: "sudo service nginx restart", run: "always"
+
+  # Run provision script
   config.vm.provision "shell", path: "provision/bootstrap.sh"
 end
