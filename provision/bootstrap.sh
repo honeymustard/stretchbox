@@ -40,7 +40,9 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install --yes nodejs
 
 # Configure Nginx
-sudo cp /vagrant/provision/nginx.conf /etc/nginx/sites-available/site.conf
+sudo cp /vagrant/provision/nginx/nginx.conf /etc/nginx/nginx.conf
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo cp /vagrant/provision/nginx/site.conf /etc/nginx/sites-available/site.conf
 sudo chmod 644 /etc/nginx/sites-available/site.conf
 sudo ln -sf /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.conf
 sudo systemctl restart nginx
