@@ -22,10 +22,10 @@ Vagrant.configure("2") do |config|
     vb.memory = "256"
   end
 
+  # Run provision script
+  config.vm.provision "shell", path: "provision/bootstrap.sh"
+
   # Restart services
   config.vm.provision "shell", inline: "sudo service mariadb restart", run: "always"
   config.vm.provision "shell", inline: "sudo service nginx restart", run: "always"
-
-  # Run provision script
-  config.vm.provision "shell", path: "provision/bootstrap.sh"
 end
