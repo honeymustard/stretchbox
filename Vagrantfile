@@ -11,10 +11,12 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
   # Copy certain files
-  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/host.pub"
+  config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/id_rsa.pub"
+  config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/id_rsa"
   config.vm.provision "file", source: "~/.agignore", destination: "~/.agignore"
   config.vm.provision "file", source: "~/.gitconfig", destination: "~/.gitconfig"
   config.vm.provision "file", source: "~/.vimrc", destination: "~/.vimrc"
+  config.vm.provision "file", source: "~/.zshrc", destination: "~/.zshrc"
 
   # Up this if you need more space
   config.vm.provider "virtualbox" do |vb|
