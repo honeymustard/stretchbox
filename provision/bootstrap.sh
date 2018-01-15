@@ -35,8 +35,10 @@ sudo apt-get install --yes php-mcrypt
 sudo apt-get install --yes php-xml
 sudo apt-get install --yes php-xmlrpc
 
-# Node JS
+# Misc libraries
 sudo apt-get install --yes curl
+
+# Node JS
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install --yes nodejs
 
