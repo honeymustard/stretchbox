@@ -10,13 +10,14 @@ if [ ! -d /vagrant/log/nginx ]; then
 fi
 
 # Add public key
-sudo cat ~vagrant/.ssh/host.pub >> ~vagrant/.ssh/authorized_keys
+sudo cat ~vagrant/.ssh/id_rsa.pub >> ~vagrant/.ssh/authorized_keys
 
 # Install packages
 sudo apt-get update
 
 # Essentials
 sudo apt-get install --yes vim
+sudo apt-get install --yes zsh
 sudo apt-get install --yes git
 sudo apt-get install --yes silversearcher-ag
 
